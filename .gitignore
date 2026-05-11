@@ -1,0 +1,14 @@
+*.axf
+*.crf
+*.d
+*.htm
+*.lnp
+*.lst
+*.map
+*.o
+*.plg
+*.tra
+*.dep
+*.bak
+*.uvopt
+*.uvoptx
