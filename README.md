@@ -1,10 +1,18 @@
 # LPC1768 LED Blink
 
 > Bare-metal LED blink on LPC1768 — direct register access, no HAL functions , simulated in Keil MDK
+## Programs in this repo
+
+| File | Description |
+|------|-------------|
+| `Led_Blinking.c` | Single LED blink on P1.18 using FIOSET/FIOCLR |
+| `Led_Chasing.c`  | Chasing LED effect — one LED at a time P0.19 to P0.26 |
 
 ## What This Does
 Blinks the onboard LED by directly writing to GPIO registers FIODIR, FIOSET 
 and FIOCLR on Port 1 Pin 18. No HAL library used — pure register level C code.
+
+
 
 ## Board
 - LPC1768 (Cortex-M3)
