@@ -1,3 +1,9 @@
+![Build Status](https://github.com/sirishakallam1991-ux/lpc1768-led-blink/actions/workflows/build.yml/badge.svg)
+
+# LPC1768 LED Blink
+
+rest of your readme content here...
+
 # LPC1768 LED Blink
 
 > Bare-metal LED blink on LPC1768 — direct register access, no HAL functions , simulated in Keil MDK
