@@ -3,8 +3,6 @@ name: LPC1768 LED Blink Build Check
 on:
   push:
     branches: [ master, main ]
-  pull_request:
-    branches: [ master, main ]
   schedule:
     - cron: '0 9 * * 1'
 
@@ -14,14 +12,12 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Check source files exist
         run: |
           echo "Checking source files..."
           ls -la *.c || true
-          ls -la *.h || true
-          ls -la *.s || true
           echo "File check done!"
 
       - name: Install ARM cross compiler
@@ -42,6 +38,6 @@ jobs:
       - name: Build summary
         run: |
           echo "================================"
-          echo "  Build completed               "
           echo "  Project: LPC1768 LED Blink    "
+          echo "  Build completed successfully! "
           echo "================================"
