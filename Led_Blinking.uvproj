@@ -391,9 +391,9 @@
               <FilePath>.\startup_LPC17xx.s</FilePath>
             </File>
             <File>
-              <FileName>Led_Blinking.c</FileName>
+              <FileName>Led_Pattren.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\Led_Blinking.c</FilePath>
+              <FilePath>.\Led_Pattren.c</FilePath>
             </File>
           </Files>
         </Group>
