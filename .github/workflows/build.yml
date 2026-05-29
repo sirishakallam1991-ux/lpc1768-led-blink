@@ -1,43 +1,15 @@
 name: LPC1768 LED Blink Build Check
-
 on:
   push:
     branches: [ master, main ]
   schedule:
     - cron: '0 9 * * 1'
-
 jobs:
-  build:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Check source files exist
-        run: |
-          echo "Checking source files..."
-          ls -la *.c || true
-          echo "File check done!"
-
-      - name: Install ARM cross compiler
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y gcc-arm-none-eabi
-
-      - name: Validate C syntax
-        run: |
-          for file in *.c; do
-            echo "Checking $file ..."
-            arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb \
-              -fsyntax-only -I. "$file" \
-              && echo "$file OK!" \
-              || echo "$file has errors!"
-          done
-
-      - name: Build summary
-        run: |
-          echo "================================"
-          echo "  Project: LPC1768 LED Blink    "
-          echo "  Build completed successfully! "
-          echo "================================"
+  call-build:
+    uses: sirishakallam1991-ux/lpc1768-workflows/.github/workflows/reusable-build.yml@main
+    with:
+      project_name: "LPC1768 LED Blink"
+      email_to: "skworkus@gmail.com"
+    secrets:
+      GMAIL_USERNAME: ${{ secrets.GMAIL_USERNAME }}
+      GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
