@@ -10,7 +10,7 @@ jobs:
     uses: sirishakallam1991-ux/lpc1768-workflows/.github/workflows/reusable-build.yml@main
     with:
       project_name: "LPC1768 LED Blink"
-      email_to: "skworkus@gmail.com"
     secrets:
       GMAIL_USERNAME: ${{ secrets.GMAIL_USERNAME }}
       GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+      NOTIFY_EMAIL: ${{ secrets.NOTIFY_EMAIL }}
